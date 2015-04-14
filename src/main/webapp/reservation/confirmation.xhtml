@@ -11,11 +11,11 @@
 <h:form p:oninput="calculateProgress()" prependId="false">
 
     <p>
-        <label>Name (First Last):</label><h:outputText value="#{reservationBean.fullname}"/>
+        <label>#{msg.msg_name} (First Last):</label><h:outputText value="#{reservationBean.fullname}"/>
     </p>
 
     <p>
-        <label>Email:</label><h:outputText value="#{reservationBean.email}"/>
+        <label>#{msg.msg_email}:</label><h:outputText value="#{reservationBean.email}"/>
     </p>
 </h:form>
 

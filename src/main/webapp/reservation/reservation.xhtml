@@ -12,14 +12,14 @@
 <h:form p:oninput="calculateProgress()" prependId="false">
 
     <p>
-        <label>Name (First Last):</label>
+        <label>#{msg.msg_name} (First Last):</label>
         <br/>
         <input type="text" jsf:id="full_name" name="full_name" placeholder="John Doe"
                value="#{reservationBean.fullname}" required="required"/>
     </p>
 
     <p>
-        <label>Email:</label>
+        <label>#{msg.msg_email}:</label>
         <br/>
         <input type="email" jsf:id="email" name="email" value="#{reservationBean.email}" required="required"/>
     </p>
