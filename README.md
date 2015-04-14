@@ -23,3 +23,13 @@ This is done by
 * creating a Managed Bean by annotating as @ManagedBean (javax.faces.bean.ManagedBean)
 * optionally making it as a Session Scoped by annotating as @SessionScoped to handle post data from user from (reservation form) and render in another page (confirmation page)
 * using EL to access bean properties from the pages
+
+### Get it work with no web.xml
+This is done by
+
+* removing web.xml (of course :-) )
+* adding Maven plugin "maven-war-plugin" and tell it to not require for web.xml
+
+How to test?
+
+* instead of accessing .../faces/reservation/reservation.xhtml, using .../reservation/reservation.jsf
