@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+<h:head>
+    <title>Reservation Page</title>
+</h:head>
+
+<h:form p:oninput="calculateProgress()" prependId="false">
+
+    <p>
+        <label>Name (First Last):</label>
+        <br/>
+        <input type="text" jsf:id="full_name" name="full_name" placeholder="John Doe"
+               value="#{reservationBean.fullname}" required="required"/>
+    </p>
+
+    <p>
+        <label>Email:</label>
+        <br/>
+        <input type="email" jsf:id="email" name="email" value="#{reservationBean.email}" required="required"/>
+    </p>
+
+    <p>
+        <h:commandButton value="Make Reservation" action="confirmation"/>
+    </p>
+
+    <p>
+        <progress jsf:id="progressBar" max="100" value="0"/>
+    </p>
+
+</h:form>
+
+<script>
+    function calculateProgress() {
+        var bar = document.getElementById("progressBar");
+        bar.value += 5;
+    }
+</script>
+
+</html>

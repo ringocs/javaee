@@ -14,3 +14,12 @@ This is done by
 * added faces-config.xml into WEB-INF folder
 * specify "resource-bundle" config
 * get message and use it in view
+
+### Get simple JSF + Managed Bean work to together
+This is done by
+
+* make sure FacesServlet is defined in web.xml (just for now as petclinic does not require this so there should be other solutions)
+* configuring url-pattern for FacesServlet and make sure it is not "/*". Should be something like "/faces/*"
+* creating a Managed Bean by annotating as @ManagedBean (javax.faces.bean.ManagedBean)
+* optionally making it as a Session Scoped by annotating as @SessionScoped to handle post data from user from (reservation form) and render in another page (confirmation page)
+* using EL to access bean properties from the pages
