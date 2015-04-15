@@ -1,5 +1,8 @@
 package com.techienotes.sample.reservation;
 
+import com.techienotes.sample.reservation.services.BookingService;
+
+import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import java.io.Serializable;
@@ -10,6 +13,9 @@ import java.io.Serializable;
 @ManagedBean
 @SessionScoped
 public class ReservationBean implements Serializable {
+    @EJB
+    private BookingService bookingService;
+
     private String fullname = "abc";
     private String email;
 
@@ -27,5 +33,11 @@ public class ReservationBean implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String doSomething() {
+        System.out.println("I'm doing....");
+        bookingService.book();
+        return "confirmation.jsf";
     }
 }

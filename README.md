@@ -33,3 +33,15 @@ This is done by
 How to test?
 
 * instead of accessing .../faces/reservation/reservation.xhtml, using .../reservation/reservation.jsf
+
+### Add Interceptor - one piece of cross-cutting concern
+Note: Interceptor only works with CDI and EJBs. It does not work with JSF Managed Bean.
+So in our example, if we annotate ReservationBean with @Loggable, nothing will happen.
+BookingServiceImpl is a @Stateless bean - EJB - and it will work.
+
+How To?
+
+* develop an Interceptor by annotating with @Interceptor
+* make the interceptor be aware by context by enabling CDI - adding beans.xml
+* indicate stateless bean as a interceptor interested by annotating @Loggagle
+* call stateless bean operation from ReservationBean
